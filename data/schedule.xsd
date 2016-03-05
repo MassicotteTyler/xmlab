@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="Tyear">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4}"/>
+            <xs:minInclusive value="2000"/>
+            <xs:maxInclusive value="2020"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Tday">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Sunday"/>
+            <xs:enumeration value="Monday"/>
+            <xs:enumeration value="Tuesday"/>
+            <xs:enumeration value="Wednesday"/>
+            <xs:enumeration value="Thursday"/>
+            <xs:enumeration value="Friday"/>
+            <xs:enumeration value="Saturday"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Tinstructor">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+
+    <xs:simpleType name="Tclasstype">
+        <xs:restriction base="xs:string" >
+            <xs:enumeration value="Lec" />
+            <xs:enumeration value="Lab" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Tbuilding">
+        <xs:restriction base="xs:string" >
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Troom">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+
+    <xs:simpleType name="Ttime">
+        <xs:restriction base="xs:string" >
+            <xs:pattern value="\d{1,2}:\d{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+            
+    <xs:simpleType name="TCourse">
+        <xs:restriction base="xs:string" >
+            <xs:pattern value="[a-zA-Z]{4}\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="class">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="day" type="Tday"/>
+                <xs:element name="course" type="TCourse" />
+                <xs:element name="classtype" type="Tclasstype" />
+                <xs:element name="instructor" type="Tinstructor"/>
+                <xs:element name="building" type="Tbuilding" />
+                <xs:element name="room" type="Troom" />
+                <xs:element name="starttime" type="Ttime" />
+                <xs:element name="endtime" type="Ttime" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="timetable">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="class" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

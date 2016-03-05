@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="schedule.xsd">
+    <class>
+        <day>Monday</day>
+        <course>COMP4711</course>
+        <classtype>Lec</classtype>
+        <instructor>Jim jam</instructor>
+        <building>SW1</building>
+        <room>1025</room>
+        <starttime>8:30</starttime>
+        <endtime>11:30</endtime>
+    </class>
+    <class>
+        <day>Tuesday</day>
+        <course>COMP4711</course>
+        <classtype>Lab</classtype>
+        <instructor>Jim jam</instructor>
+        <building>SE12</building>
+        <room>310</room>
+        <starttime>10:30</starttime>
+        <endtime>11:30</endtime>
+    </class>
+</timetable>
