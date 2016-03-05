@@ -47,11 +47,17 @@
         </xs:restriction>
     </xs:simpleType>
             
+    <xs:simpleType name="TCourse">
+        <xs:restriction base="xs:string" >
+            <xs:pattern value="[a-zA-Z]{4}\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:element name="class">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="day" type="Tday"/>
+                <xs:element name="course" type="TCourse" />
                 <xs:element name="classtype" type="Tclasstype" />
                 <xs:element name="instructor" type="Tinstructor"/>
                 <xs:element name="building" type="Tbuilding" />

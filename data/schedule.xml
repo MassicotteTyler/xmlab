@@ -3,6 +3,7 @@
     xsi:noNamespaceSchemaLocation="schedule.xsd">
     <class>
         <day>Monday</day>
+        <course>COMP4711</course>
         <classtype>Lec</classtype>
         <instructor>Jim jam</instructor>
         <building>SW1</building>
@@ -12,6 +13,7 @@
     </class>
     <class>
         <day>Tuesday</day>
+        <course>COMP4711</course>
         <classtype>Lab</classtype>
         <instructor>Jim jam</instructor>
         <building>SE12</building>
