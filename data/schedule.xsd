@@ -47,7 +47,7 @@
         </xs:restriction>
     </xs:simpleType>
             
-    <xs:simpleType name="TCourse">
+    <xs:simpleType name="Tcoursecode">
         <xs:restriction base="xs:string" >
             <xs:pattern value="[a-zA-Z]{4}\d{4}" />
         </xs:restriction>
@@ -57,7 +57,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="day" type="Tday"/>
-                <xs:element name="course" type="TCourse" />
+                <xs:element name="coursecode" type="Tcoursecode" />
                 <xs:element name="classtype" type="Tclasstype" />
                 <xs:element name="instructor" type="Tinstructor"/>
                 <xs:element name="building" type="Tbuilding" />
@@ -68,10 +68,63 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="timetable">
+    <xs:element name="dayoftheweek">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="class" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="day" type="Tday" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="days">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dayoftheweek" maxOccurs="7" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="course">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="class" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="coursecode" type="Tcoursecode" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="courses">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="course" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="timeslot">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="class" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="time" type="Ttime" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="periods">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="timeslot" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="timetable">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="days" maxOccurs="1" />
+                <xs:element ref="courses" maxOccurs="1" />
+                <xs:element ref="periods" maxOccurs="1" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
