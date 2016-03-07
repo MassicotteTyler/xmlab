@@ -122,9 +122,9 @@
     <xs:element name="timetable">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="days" maxOccurs="1" />
-                <xs:element ref="courses" maxOccurs="1" />
-                <xs:element ref="periods" maxOccurs="1" />
+                <xs:element ref="days" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="courses" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="periods" minOccurs="0" maxOccurs="1" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
