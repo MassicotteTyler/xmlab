@@ -29,6 +29,18 @@
                 <endtime>11:30</endtime>
             </class>
         </course>
+        <course coursecode="COMP4735">
+            <class>
+                <day>Wednesday</day>
+                <coursecode>COMP4735</coursecode>
+                <classtype>Lab</classtype>
+                <instructor>Matt Linder</instructor>
+                <building>SE12</building>
+                <room>308</room>
+                <starttime>8:30</starttime>
+                <endtime>10:30</endtime>
+            </class>
+          </course>
     </courses>
 
     <periods>
@@ -44,5 +56,18 @@
                 <endtime>10:30</endtime>
             </class>
         </timeslot>
+        <timeslot time="9:30">
+            <class>
+                <day>Wednesday</day>
+                <coursecode>COMP4735</coursecode>
+                <classtype>Lab</classtype>
+                <instructor>Matt Linder</instructor>
+                <building>SE12</building>
+                <room>308</room>
+                <starttime>8:30</starttime>
+                <endtime>10:30</endtime>
+            </class>
+        </timeslot>
+
     </periods>
 </timetable>
