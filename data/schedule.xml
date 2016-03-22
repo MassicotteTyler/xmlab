@@ -14,6 +14,18 @@
                 <endtime>11:30</endtime>
             </class>
         </dayoftheweek>
+        <dayoftheweek day="Tuesday">
+            <class>
+                <day>Tuesday</day>
+                <coursecode>COMP4711</coursecode>
+                <classtype>Lab</classtype>
+                <instructor>Jim jam</instructor>
+                <building>SE12</building>
+                <room>310</room>
+                <starttime>10:30</starttime>
+                <endtime>11:30</endtime>
+            </class>
+        </dayoftheweek>
     </days>
 
     <courses>
