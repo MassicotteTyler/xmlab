@@ -113,6 +113,16 @@ class TimeTable extends CI_Model
     }
 
     /**
+     * Get keys for the days array
+     *
+     * @return array of day keys
+     */
+    function getDayKeys()
+    {
+        return array_keys($this->days);
+    }
+
+    /**
      * Gets periods
      *
      * @return all of the periods
@@ -123,6 +133,15 @@ class TimeTable extends CI_Model
     }
 
     /**
+     * Get keys for the periods array
+     *
+     * @return array of period keys
+     */
+    function getPeriodKeys()
+    {
+        return array_keys($this->periods);
+    }
+    /**
      * Gets courses
      *
      * @return all of the courses
@@ -131,6 +150,16 @@ class TimeTable extends CI_Model
     {
         return $this->courses;
     }
+    /**
+     * Get keys for the courses array
+     *
+     * @return array of course keys
+     */
+    function getCourseKeys()
+    {
+        return array_keys($this->courses);
+    }
+
 }
 /**
  * Booking class
