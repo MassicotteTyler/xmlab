@@ -160,6 +160,28 @@ class TimeTable extends CI_Model
         return array_keys($this->courses);
     }
 
+    function queryDay($day)
+    {
+      return $this->days[$day];
+    }
+
+    /**
+     * Get booking entity for selected course
+     */
+    function queryCourse($course)
+    {
+      return $this->courses[$course];
+    }
+
+    function queryTme($time)
+    {
+      return $this->periods[$time];
+    }
+
+    function query($day, $time, $course)
+    {
+
+    }
 }
 /**
  * Booking class
@@ -172,10 +194,10 @@ class TimeTable extends CI_Model
  */
 class Booking
 {
-    public $room;
-    public $time;
+    public $course;
     public $instructor;
     public $classType;
-    public $course;
+    public $room;
     public $day;
+    public $time;
 }

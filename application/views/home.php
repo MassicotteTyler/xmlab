@@ -7,7 +7,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </head>
 
   <body>
-    <h1>Hello World</h1>
+  <form method="post" name="values">
+  <table>
+  <tr>
+    <td>Days</td>
+    <td>Courses</td>
+    <td>Time</td>
+  </tr>
+   <tr>
+      <td>
+        {daydropdown}
+      </td>
+      <td>
+       {coursedropdown}
+      </td>
+      <td>
+       {timeslotdropdown}
+      </td>
+      <td>
+        <input type="submit">
+      </td>
+   </tr>
+  </form>
+  <table>
+    {resultData}
+  </table>
   </body>
 </html>
 
