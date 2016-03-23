@@ -13,6 +13,17 @@
                 <starttime>8:30</starttime>
                 <endtime>11:30</endtime>
             </class>
+            <class>
+                <day>Monday</day>
+                <coursecode>COMP4735</coursecode>
+                <classtype>Lec</classtype>
+                <instructor>Moreo</instructor>
+                <building>SW1</building>
+                <room>1025</room>
+                <starttime>8:30</starttime>
+                <endtime>11:30</endtime>
+            </class>
+
         </dayoftheweek>
         <dayoftheweek day="Tuesday">
             <class>
