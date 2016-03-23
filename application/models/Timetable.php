@@ -185,7 +185,7 @@ class TimeTable extends CI_Model
         $courseResult = array();
         $periodResult = array();
 
-        if (day !== "void")
+        if ($day !== "void")
             $dayResult = $this->queryDay($day);
         if ($time !== "void")
             $periodResult = $this->queryTime($time);
@@ -193,8 +193,8 @@ class TimeTable extends CI_Model
             $courseResult = $this->queryCourse($course);
 
         array_push($result, $dayResult);
-        array_push($result, $timeResult);
         array_push($result, $periodResult);
+        array_push($result, $courseResult);
 
         return $result;
     }

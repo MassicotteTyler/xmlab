@@ -61,23 +61,26 @@ class Welcome extends CI_Controller {
       $cDay = $arr['Days'];
       $cCourse = $arr['Course'];
       $cTime = $arr['Time'];
-      $bookings = $this->timetable->queryDay($cDay);
+      $listofBookings = $this->timetable->query($cDay, $cTime, $cCourse);
       $table = '';
       $dataRow = '';
       $dataHeader = '<tr>';
       $bool = 0;
-      foreach ($bookings as $booking)
+      foreach ($listofBookings as $bookings)
       {
-        $dataRow.='<tr>';
-        foreach($booking as $data => $value)
+        foreach($bookings as $booking)
         {
-          if ($bool == 0)
-            $dataHeader.='<th>'.$data.'</th>';
-          $dataRow.='<td>'.$value.'</td>';
-        }
-        $dataRow.='</tr>';
-        $bool = 1;
-      }
+          $dataRow.='<tr>';
+          foreach($booking as $data => $value)
+          {
+            if ($bool == 0)
+              $dataHeader.='<th>'.$data.'</th>';
+            $dataRow.='<td>'.$value.'</td>';
+          }
+          $dataRow.='</tr>';
+          $bool = 1;
+          }
+       }
       $dataHeader.='</tr>';
       $table.= $dataHeader.$dataRow;
       return $table;
