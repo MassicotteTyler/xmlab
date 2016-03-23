@@ -173,14 +173,30 @@ class TimeTable extends CI_Model
       return $this->courses[$course];
     }
 
-    function queryTme($time)
+    function queryTime($time)
     {
       return $this->periods[$time];
     }
 
     function query($day, $time, $course)
     {
+        $result = array();
+        $dayResult = array();
+        $courseResult = array();
+        $periodResult = array();
 
+        if (day !== "void")
+            $dayResult = $this->queryDay($day);
+        if ($time !== "void")
+            $periodResult = $this->queryTime($time);
+        if ($course !== "void")
+            $courseResult = $this->queryCourse($course);
+
+        array_push($result, $dayResult);
+        array_push($result, $timeResult);
+        array_push($result, $periodResult);
+
+        return $result;
     }
 }
 /**
